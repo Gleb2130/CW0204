@@ -106,6 +106,20 @@ Vec association(Vec obj1, Vec obj2) {
 	return result;
 }
 
+Vec Sum_mnoz(Vec* vec_arr,size_t size) {
+	Vec result;
+	constructor(&result, 0);
+
+	for (size_t i = 0; i < size; i++)
+	{
+		for (size_t j = 0; j < vec_arr[i].size; j++)
+		{
+			push_back(&result, vec_arr[i].arr[j]);
+		}
+	}
+	return result;
+}
+
 int main() {
 	srand(time(NULL));
 
@@ -129,6 +143,13 @@ int main() {
 	Vec association_res = association(mnoz1, mnoz2);
 	print(intersection_res);
 	print(association_res);
+
+	Vec* arr_mnoz;
+
+
+	Vec res = Sum_mnoz(intersection_res,2);
+
+
 	destructor(&mnoz1);
 	destructor(&mnoz2);
 }
